@@ -188,56 +188,55 @@ $('nav-centent-left > li').click(function() {
         .addClass('active')
 })
 
-$(function() {
+// $(function() {
 
-    let list = null
+//     let list = null
 
-    // 0. 准备一个对象, 记录所有可以影响页面主体内容的数据
-    const list_info = {
-        current: 1,
-        pagesize: 10
-    }
-
-
-    getCateOne()
-    async function getCateOne() {
-        // 1-2. 发送请求获取
-        const cat_one_list = await $.get('../server/getCateOne.php', null, null, 'json')
-            // console.log(cat_one_list)
-
-        // 1-3. 进行列表渲染
-
-        cat_one_list.list.forEach(item => {
-            str += `
-            <div>
-                <p class="box-id" data-id="${ item.goods_id }">
-                    <img src="${ item.goods_big_logo }" alt="">
-                </p>
-                <h6>
-                    ${ item.goods_name }
-                </h6>
-                <b>￥${ item.goods_price }</b>
-              </div>
-            `
-        })
-        $('.recommend-box').html(str)
-    }
-
-    // // 9. 点击跳转到详情页
-
-    $('.recommend-box').on('click', 'p', function() {
-        // 9-2. 拿到 标签身上记录的商品 id
-        const id = $(this).data('id')
-            // console.log(id)
-            // 9-3. 把这个 id 存储到 cookie 中
-        setCookie('goods_id', id)
-            // 9-4. 进行页面跳转
-        window.location.href = '../pages/detail.html'
-    })
+//     // 0. 准备一个对象, 记录所有可以影响页面主体内容的数据
+//     const list_info = {
+//         current: 1,
+//         pagesize: 10
+//     }
 
 
+// getCateOne()
+// async function getCateOne() {
+//     // 1-2. 发送请求获取
+//     const cat_one_list = await $.get('../server/getCateOne.php', null, null, 'json')
+//     console.log(cat_one_list)
+
+//     // 1-3. 进行列表渲染
+
+//     // cat_one_list.list.forEach(item => {
+//     //     str += `
+//     //     <div>
+//     //         <p class="box-id" data-id="${ item.goods_id }">
+//     //             <img src="${ item.goods_big_logo }" alt="">
+//     //         </p>
+//     //         <h6>
+//     //             ${ item.goods_name }
+//     //         </h6>
+//     //         <b>￥${ item.goods_price }</b>
+//     //       </div>
+//     //     `
+//     // })
+//     // $('.recommend-box').html(str)
+// }
+
+// // 9. 点击跳转到详情页
+
+// $('.recommend-box').on('click', 'p', function() {
+//     // 9-2. 拿到 标签身上记录的商品 id
+//     const id = $(this).data('id')
+//         // console.log(id)
+//         // 9-3. 把这个 id 存储到 cookie 中
+//     setCookie('goods_id', id)
+//         // 9-4. 进行页面跳转
+//     window.location.href = '../pages/detail.html'
+// })
 
 
 
 
-})
+
+// })
